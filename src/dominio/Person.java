@@ -3,10 +3,12 @@ package dominio;
 public class Person {
     private int age;
     private String nome;
+    private String cpf;
 
-    public Person(String nome, int age) {
+    public Person(String nome, int age, Strinf cpf) {
         this.nome = nome;
         this.age = age;
+        this.cpf = cpf;
     }
 
     public String getNome() {
@@ -23,5 +25,13 @@ public class Person {
 
     public int getAge() {
         return age;
+    }
+
+    public String getcpf(){
+        return cpf;
+    }
+
+    public void setCpf(String cpf){
+         this.cpf = cpf;
     }
 }

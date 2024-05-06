@@ -41,4 +41,17 @@ public class PersonServiceTest {
         assertTrue(nomeValido2, "Nome válido!");
         assertFalse(nomeValido3, "Nome inválido!"); // Por ter 1 caracter!
     }
+
+    public void testCpfValido(){
+        PersonService personService = new PersonService();
+
+        Person person1 = new Person("Mauricio", 20, "43587260803");
+        Person person2 = new Person("Lucas", 38, "12341"); // Invalidando o cpf
+
+        boolean cpfValido1 = personService.cpfValido(person1);
+        boolean cpfValido2 = personService.cpfValido(person2);
+
+        assertTrue(cpfValido1, "CPF valido!");
+        assertTrue(cpfValido2, "CPF invalido!");
+    }
 }

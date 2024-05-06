@@ -15,4 +15,13 @@ public class PersonService {
         String nome = person.getNome();
         return nome != null && nome.length() >= 2; // Verificando se o nome tem pelo menos 2 caracteres
     }
+
+    public boolean cpfValido(Person person){
+        Objects.requireNonNull(person, "Person can't be null!");
+        String cpf = person.getcpf();
+
+        if (cpf.length() != 11) {
+            return false;
+        }
+    }
 }
