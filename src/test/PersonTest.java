@@ -20,8 +20,25 @@ public class PersonServiceTest {
         boolean isAdult3 = personService.isAdult(person3);
 
         // Assert
-        assertFalse(isAdult1, "Nao eh adulto!");
-        assertTrue(isAdult2, "Eh adulto!");
-        assertTrue(isAdult3, "Eh adulto!");
+        assertFalse(isAdult1, "Não é adulto!");
+        assertTrue(isAdult2, "É adulto!");
+        assertTrue(isAdult3, "É adulto!");
+    }
+
+    @Test
+    public void testNomeValido() {
+        PersonService personService = new PersonService();
+
+        Person person1 = new Person("Mauricio", 40);
+        Person person2 = new Person("Luciana", 28);
+        Person person3 = new Person("A", 30); // Nao sao validos nomes com menos de 2 caracteres!
+
+        boolean nomeValido1 = personService.nomeValido(person1);
+        boolean nomeValido2 = personService.nomeValido(person2);
+        boolean nomeValido3 = personService.nomeValido(person3);
+
+        assertTrue(nomeValido1, "Nome válido!");
+        assertTrue(nomeValido2, "Nome válido!");
+        assertFalse(nomeValido3, "Nome inválido!"); // Por ter 1 caracter!
     }
 }
